@@ -1,16 +1,29 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="app">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Test site</title>
     <script src="/bower_components/angularjs/angular.js"></script>
+    <script src="/bower_components/ui-router/release/angular-ui-router.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/services/userManagement.js"></script>
+    <script src="/app/home/HomeCtrl.js"></script>
+    <script src="/app/news/NewsCtrl.js"></script>
 </head>
 <body>
+    <div data-ng-view=""></div>
     <div>
         <label>Name:</label>
         <input type="text" ng-model="yourName" placeholder="Enter a name here">
         <hr>
         <h1>Hello {{yourName}}!</h1>
+    </div>
+    <div ng-controller="HomeCtrl as home">
+        <p>Home ctrl user: {{home.user}}</p>
+        <div ng-include="'app/home/home.html'"></div>
+        <div ng-controller="NewsCtrl">
+            {{$parent.welcomeMessage}}
+        </div>
     </div>
 </body>
 </html>
