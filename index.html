@@ -10,25 +10,14 @@
     <script src="/app/home/HomeCtrl.js"></script>
     <script src="/app/news/NewsCtrl.js"></script>
     <script src="app/header/HeaderCtrl.js"></script>
+    <script src="app/footer/FootCtrl.js"></script>
     <script src="app/left_side/LeftSideCtrl.js  "></script>
     <script src="/app/app.config.js"></script>
 </head>
 <body>
     <div ng-include="'app/header/header.html'"></div>
-
-    <div ui-view></div>
-    <div>
-        <label>Name:</label>
-        <input type="text" ng-model="yourName" placeholder="Enter a name here">
-        <hr>
-        <h1>Hello {{yourName}}!</h1>
-    </div>
-    <div ng-controller="HomeCtrl as home">
-        <p>Home ctrl user: {{home.user}}</p>
-        <div ng-include="'app/home/home.html'"></div>
-        <div ng-controller="NewsCtrl">
-            {{$parent.welcomeMessage}}
-        </div>
-    </div>
+    <div ui-view="left-side"></div>
+    <div ui-view="right-side"></div>
+    <div ng-controller="FootCtrl" ng-include="'app/footer/footer.html'"></div>
 </body>
 </html>
