@@ -6,9 +6,6 @@
     <script src="/bower_components/angularjs/angular.js"></script>
     <script src="/bower_components/ui-router/release/angular-ui-router.js"></script>
     <script src="/app/app.js"></script>
-    <script src="/app/services/userManagement.js"></script>
-    <script src="/app/home/HomeCtrl.js"></script>
-    <script src="/app/news/NewsCtrl.js"></script>
     <script src="app/header/HeaderCtrl.js"></script>
     <script src="app/footer/FootCtrl.js"></script>
     <script src="app/left_side/LeftSideCtrl.js  "></script>
@@ -16,8 +13,8 @@
 </head>
 <body>
     <div ng-include="'app/header/header.html'"></div>
-    <div ui-view="left-side"></div>
-    <div ui-view="right-side"></div>
+    <div style="display:inline-block; width:250px;" ui-view="left-side"></div>
+    <div style="display:inline-block; width:250px;" ui-view="right-side"></div>
     <div ng-controller="FootCtrl" ng-include="'app/footer/footer.html'"></div>
 </body>
 </html>
