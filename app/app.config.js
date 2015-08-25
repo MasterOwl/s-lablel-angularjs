@@ -6,7 +6,7 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('home', {
             url: "/",
-            templateUrl: "app/users/user.html",
-            controller: 'HomeCtrl'
+            templateUrl: "app/left_side/left-side.html",
+            controller: 'LeftSideCtrl'
         });
 });
