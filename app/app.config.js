@@ -6,7 +6,12 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('home', {
             url: "/",
-            templateUrl: "app/users/user.html",
-            controller: 'HomeCtrl'
+            templateUrl: "app/mainpage/mainpage.html"
+        }).state('news', {
+            url: "/News",
+            templateUrl: "app/news/news.html"
+        }).state('contacts', {
+            url: "/Contacts",
+            templateUrl: "app/contact/contact.html"
         });
 });
